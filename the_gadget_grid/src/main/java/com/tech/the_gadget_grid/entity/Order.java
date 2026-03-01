@@ -29,12 +29,10 @@ public class Order {
 
     private String paymentStatus; // Paid, Pending
 
-    private String orderStatus; // Processing, Shipped, Delivered
 
     @PrePersist
     protected void onCreate() {
         this.orderDate = LocalDateTime.now();
-        if (this.orderStatus == null) this.orderStatus = "Processing";
         if (this.paymentStatus == null) this.paymentStatus = "Pending";
     }
 }
